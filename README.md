@@ -4,7 +4,7 @@
 that means people who actually study computer science, those who are in the field of computer.
 so that can be, a student, a teacher, even a child who like computer stuff.
 
---the application is called dictionary. It is a computer science dictionary that contains words that are 
+--the application is called Dictionary. It is a computer science dictionary that contains words that are 
 used in computer field. So the App is designed to helps those who are interesed in this field. 
 It contains words with photos and links to google and wikipedia for those that are not satisfied with the traduction.
 
