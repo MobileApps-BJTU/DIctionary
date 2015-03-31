@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Dictionary</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_first_fragment">FirstFragment</string>
+    <string name="title_activity_history_fragment">HistoryFragment</string>
+    <string name="title_activity_result_fragment">ResultFragment</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="URL">https://www.google.com/?gws_rd=ssl#q=</string>
+
+</resources>
