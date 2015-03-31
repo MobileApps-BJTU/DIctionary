@@ -1,41 +1,99 @@
-package com.example.gakasgado.Dictionary2;
+package com.example.massalagabriel.listfragmentexercice;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
+import android.app.ListFragment;
+import android.net.Uri;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 
+/**
+ * A simple {@link Fragment} subclass.
+ * Activities that contain this fragment must implement the
+ * {@link FirstFragment.OnFragmentInteractionListener} interface
+ * to handle interaction events.
+ */
+public class FirstFragment extends ListFragment {
+
+    private static String[] ListItems =  {
+        "Graphic Design",
+         "Programmer",
+         "RAM",
+         "Software",
+         "Java",
+         "Python"
 
 
-public class FirstFragment extends ActionBarActivity {
+    };
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_first_fragment);
+    private OnFragmentInteractionListener mListener;// ce le contrat entre l'activite et le fragment
+
+    public FirstFragment() {
+        // Required empty public constructor
     }
 
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_first, menu);
-        return true;
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+
+        ArrayAdapter<String> list = new ArrayAdapter<String>(
+                getActivity(), android.R.layout.simple_list_item_1,ListItems
+        );
+        setListAdapter(list);
+        return inflater.inflate(R.layout.fragment_first, container, false);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+    // TODO: Rename method, update argument and hook method into UI event
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+    @Override
+    public void onListItemClick (ListView l, View v, int position, long id) {
+        if (mListener != null) {
+            mListener.sendPositionToFragment2(position);//
         }
-
-        return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            mListener = (OnFragmentInteractionListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
+    }
+
+    /**
+     * This interface must be implemented by activities that contain this
+     * fragment to allow an interaction in this fragment to be communicated
+     * to the activity and potentially other fragments contained in that
+     * activity.
+     * <p/>
+     * See the Android Training lesson <a href=
+     * "http://developer.android.com/training/basics/fragments/communicating.html"
+     * >Communicating with Other Fragments</a> for more information.
+     */
+    public interface OnFragmentInteractionListener {//
+
+        void onBackPresse();
+
+        // TODO: Update argument type and name
+        public void onFragment1ListItemClicked(int position);
+
+        void sendPositionToFragment2(int position);
+    }
+
 }

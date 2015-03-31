@@ -1,54 +1,53 @@
-package com.example.gakasgado.Dictionary2;
+package com.example.massalagabriel.listfragmentexercice;
 
 import android.app.FragmentManager;
-import android.content.Intent;
+import android.app.FragmentTransaction;
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity
+        implements  FirstFragment.OnFragmentInteractionListener {
+
+    @Override
+
+
+
+    public void sendPositionToFragment2(int position){
+
+       getFragmentManager().beginTransaction()
+               .replace(R.id.fragment_holder,
+                       SecondFragment.newInstance(position))
+               .addToBackStack(null)// faire revenir a l'ancien fragment
+               .commit();
+
+    }
+    @Override
+    public void onBackPresse(){
+
+        FragmentManager fm = getFragmentManager();
+        if(fm.getBackStackEntryCount() > 0){
+
+            fm.popBackStack();
+        }else{
+            super.onBackPressed();
+        }
+        fm.popBackStack();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-      final Button History =
-                (Button) findViewById(R.id.history_button);
-
-
-
-
-        History.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-                Intent activity_history_fragmentIntent =new Intent(getApplicationContext(),
-                        HistoryFragment.class);
-                startActivity(activity_history_fragmentIntent);
-            }
-        });
-
-
-        final Button Search =
-                (Button) findViewById(R.id.search_button);
-
-
-
-
-        Search.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-                Intent activity_result_fragmentIntent =new Intent(getApplicationContext(),
-                        ResultFragment.class);
-                startActivity(activity_result_fragmentIntent);
-            }
-        });
-
+        getFragmentManager().beginTransaction()
+                .add(R.id.fragment_holder,new FirstFragment())
+                .commit();
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -71,4 +70,11 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+    @Override
+    public void onFragment1ListItemClicked(int position) {
+
+    }
 }
+
