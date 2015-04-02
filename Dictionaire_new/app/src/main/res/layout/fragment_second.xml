@@ -1,0 +1,71 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:paddingLeft="16dp"
+    android:background="#1f2124"
+    tools:context="com.example.massalagabriel.Dictionary.SecondFragment">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="29dp"
+        android:background="#cab700"
+        android:text="Results"
+        android:textColor="#663b00"
+        android:textSize="20dp"
+        android:id="@+id/textView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/result"
+        android:textSize="16dp"
+        android:textColor="#000000"
+        android:background="#e9ecee"
+        android:gravity="center"
+        android:layout_below="@+id/textView"
+
+        android:layout_marginTop="70dp" />
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/sound"
+        android:background="@drawable/sound1"
+        android:layout_marginBottom="83dp"
+        android:layout_above="@+id/photo"
+        android:layout_toStartOf="@+id/photo" />
+
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/wikipedia"
+        android:background="@drawable/wikipedia"
+        android:layout_gravity="right|bottom"
+        android:layout_alignTop="@+id/google"
+        android:layout_toStartOf="@+id/google" />
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/photo"
+        android:background="@drawable/photo"
+
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_alignTop="@+id/wikipedia"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="29dp" />
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/google"
+        android:background="@drawable/google"
+        android:layout_marginBottom="40dp"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@+id/photo" />
+
+</RelativeLayout>

@@ -1,0 +1,97 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#1f2124"
+
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dictionary"
+        android:textColor="#e9ecee"
+        android:textSize="50dp"
+
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="400dp"
+        android:id="@+id/dictionary"
+        android:background="@drawable/dictionary2"
+
+        android:layout_alignTop="@+id/history_button"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="44dp"
+        android:background="#cab700"
+        android:text=""
+        android:textColor="#663b00"
+        android:textSize="20dp"
+        android:id="@+id/textView1"
+        android:layout_marginTop="110dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="History"
+        android:id="@+id/history_button"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:background="#cab700"/>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="44dp"
+        android:background="#cab700"
+        android:text=""
+        android:textColor="#663b00"
+        android:textSize="20dp"
+        android:id="@+id/textView2"
+        android:layout_gravity="left|center_vertical"
+        android:layout_alignTop="@+id/search_button"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:id="@+id/search_button"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:background="#cab700"/>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="44dp"
+        android:background="#cab700"
+        android:text=""
+        android:textColor="#663b00"
+        android:textSize="20dp"
+        android:id="@+id/textView3"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="122dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:id="@+id/settings_button"
+        android:layout_alignTop="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        android:background="#cab700"/>
+
+
+
+</RelativeLayout>

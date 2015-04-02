@@ -1,0 +1,31 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1f2124"
+    tools:context="com.example.massalagabriel.Dictionary.FirstFragment">
+
+
+    <ListView
+        android:id="@+id/android:list"
+        android:layout_width="match_parent"
+        android:layout_height="451dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="center_horizontal|bottom"
+        android:background="#e9ecee"/>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="44dp"
+        android:background="#cab700"
+        android:text="History"
+        android:textColor="#e9ecee"
+        android:textSize="20dp"
+
+        android:id="@+id/textView3"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="28dp" />
+
+</RelativeLayout>
